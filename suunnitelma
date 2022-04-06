@@ -1,0 +1,30 @@
+Eläinklinikka suunnitelma
+
+1. User stories sisällyttäminen sovellukseen.
+
+2. Näyttörakenteiden teko.
+
+3. Päivitä GitHubiin muutokset ja dokumentointi tasaisin väliajoin.
+
+4. Sovelluksessa pitää olla seuraavat asiat:
+	- Toimiva asiakas rekisteri, jossa tiedot lemmikeistä ja niiden omistajien tiedot.
+	- Eläinlääkärin pitää saada hakea ja muuttaa eläinten tietoja.
+	- Mahdollisuus kirjata uusia sairauksia ja niiden hoitosuunnitelma.
+	- Käyntien kirjaaminen (Päivämäärä, syy, kommentti) täytyy olla mhdollista listata.
+	- Maksujen seuranta (Käteinen, laskutettu, maksettu)
+	- Perustiedot lemmikeistä:
+		- Eläinlaji (Kissa, koira)
+		- Tila (Elossa, kuollut)
+		- Nimi
+		- Syntymäpäivä
+		- yms.
+
+5. Palautuksessa pitää olla (31.5.2022):
+	- Linkki GitHub-repoon.
+	- Lyhyt videotallenne jossa esitellään työ lyhyesti (Voi olla GitHubissa).
+	- Suunnitteludokumentaatio (Avataan aina kun ruvetaan koodaamaan GitHubissa ja kirjoitetaan mitä teki sillä kertaa.)
+	- +2p jos tiedot voidaan hakea tietokannasta.
+	- +4p Yksikkötestausta vähintään 10 testitapausta.
+	- +4p jos on perehdytty eläimiin (Voidaan toteuttaa esim kolmella eläinlajilla ja jokainen rymän jäsen ottaa kohteekseen yhden eläimen.)
+	- +5p jos käytössä on ulkopuolinen palvelu. (Esim. sähköposti)
+	- +5p toimiva laskutus aineisto (Tehty esimerkiksi Excelillä)
