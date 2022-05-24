@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Kirjaudu" HorizontalAlignment="Left" Margin="625,10,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button Content="Rekisteröidy" HorizontalAlignment="Left" Margin="710,10,0,0" VerticalAlignment="Top" Width="80"/>
     </Grid>
 </Window>
