@@ -24,5 +24,13 @@ namespace Eläinklinikka
             e1.ShowDialog();
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MainWindow e1 = new MainWindow();
+            this.Hide();
+            e1.ShowDialog();
+            this.Close();
+        }
     }
 }

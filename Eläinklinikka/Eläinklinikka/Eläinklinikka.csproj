@@ -70,6 +70,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="UserData.cs">
+      <DependentUpon>UserData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EläimetData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EläimetData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Eläimet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +169,28 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="UserData.xsc">
+      <DependentUpon>UserData.xsd</DependentUpon>
+    </None>
+    <None Include="UserData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UserData.xss">
+      <DependentUpon>UserData.xsd</DependentUpon>
+    </None>
+    <None Include="EläimetData.xsc">
+      <DependentUpon>EläimetData.xsd</DependentUpon>
+    </None>
+    <None Include="EläimetData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EläimetData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="EläimetData.xss">
+      <DependentUpon>EläimetData.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
