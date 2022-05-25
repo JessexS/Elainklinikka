@@ -27,7 +27,8 @@ namespace Eläinklinikka
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            RegForm f2 = new RegForm();
+            f2.ShowDialog(); // Shows Form2
         }
     }
 }

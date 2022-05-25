@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Kirjaudu" HorizontalAlignment="Left" Margin="625,10,0,0" VerticalAlignment="Top" Width="80"/>
-        <Button Content="Rekisteröidy" HorizontalAlignment="Left" Margin="710,10,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button x:Name="LogBut" Content="Kirjaudu" HorizontalAlignment="Left" Margin="627,10,0,0" VerticalAlignment="Top" FontFamily="Calibri" Height="20" Width="75"/>
+        <Button x:Name="RegBut" Content="Rekisteröidy" HorizontalAlignment="Left" Margin="715,10,0,0" VerticalAlignment="Top" Click="Button_Click" FontFamily="Calibri" FontWeight="Normal" Height="20" Width="75"/>
     </Grid>
 </Window>
