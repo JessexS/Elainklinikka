@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Eläinklinikka
 {
-    public partial class Form1 : Form
+    public partial class Eläimet : Form
     {
-        public Form1()
+        public Eläimet()
         {
             InitializeComponent();
         }

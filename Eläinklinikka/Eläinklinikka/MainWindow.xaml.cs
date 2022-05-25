@@ -32,7 +32,10 @@ namespace Eläinklinikka
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            
+            LogForm l1 = new LogForm();
+            this.Hide();
+            l1.ShowDialog();
+            this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

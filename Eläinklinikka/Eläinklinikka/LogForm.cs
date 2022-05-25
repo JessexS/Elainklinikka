@@ -16,5 +16,13 @@ namespace Eläinklinikka
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Eläimet e1 = new Eläimet();
+            this.Hide();
+            e1.ShowDialog();
+            this.Close();
+        }
     }
 }

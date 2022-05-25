@@ -52,6 +52,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Kirjaudu";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -76,7 +77,7 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Salasana";
             // 
-            // Form2
+            // LogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,7 +88,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form2";
+            this.Name = "LogForm";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
