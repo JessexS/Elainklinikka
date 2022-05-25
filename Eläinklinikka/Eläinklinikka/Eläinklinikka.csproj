@@ -147,6 +147,10 @@
     <EmbeddedResource Include="Eläimet.resx">
       <DependentUpon>Eläimet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\Form1.resx" />
+    <EmbeddedResource Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Resources.resx" />
+    <EmbeddedResource Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna_UI_Activation.Form1.resources" />
+    <EmbeddedResource Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna_UI_Activation.Resources.resources" />
     <EmbeddedResource Include="Kalenteri.resx">
       <DependentUpon>Kalenteri.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +173,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\Guna UI Activation.vbproj" />
+    <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Settings.settings" />
+    <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.vbproj.GenerateResource.Cache" />
+    <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.vbprojResolveAssemblyReference.cache" />
+    <None Include="Guna.UI-Framework-Lib-master\README.md" />
     <None Include="UserData.xsc">
       <DependentUpon>UserData.xsd</DependentUpon>
     </None>
@@ -206,6 +217,30 @@
     <Content Include="Eläinklinikka.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Guna.UI-Framework-Lib-master\.gitattributes" />
+    <Content Include="Guna.UI-Framework-Lib-master\.gitignore" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation.sln" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna UI Activation.exe" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna UI Activation.pdb" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna UI Activation.vshost.exe" />
+    <Resource Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna UI Activation.xml" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna.UI.dll" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\Form1.Designer.vb" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\Form1.vb" />
+    <Resource Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\icon.ico" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Application.Designer.vb" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Application.myapp" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\AssemblyInfo.vb" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Resources.Designer.vb" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Settings.Designer.vb" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.exe" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.pdb" />
+    <Resource Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.vbproj.FileListAbsolute.txt" />
+    <Resource Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\Guna UI Activation.xml" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 2.0\Guna.UI.dll" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 3.5\Guna.UI.dll" />
+    <Content Include="Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
