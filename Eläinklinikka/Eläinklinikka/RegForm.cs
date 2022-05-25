@@ -19,15 +19,23 @@ namespace Eläinklinikka
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string constr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + Application.StartupPath + "/Eläniklinikka.mdb";
+            string constr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + Application.StartupPath + "/Eläinklinikka.mdb";
             OleDbConnection dbcon = new OleDbConnection(constr);
             OleDbCommand cmd = dbcon.CreateCommand();
             dbcon.Open();
-            cmd.CommandText = "INSERT INTO Udata (Uname, Pword, Pnumber) Values('" + Uname.Text + "','" + Pword.Text + "','" + Pnumber.Text + "')";
+            cmd.CommandText = "INSERT INTO [Udata] ( Uname, Pword, Pnumber ) Values ('" + Uname.Text + "','" + Pword.Text + "','" + Pnumber.Text + "')";
             cmd.Connection = dbcon;
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Data Inserted Successfully");
+            MessageBox.Show("Rekisteröinti suoritettu!");
             dbcon.Close();
+            this.Close();
+        }
+
+        private void TakaisinButton_Click(object sender, EventArgs e)
+        {
+            Close();
+            MainWindow m1 = new MainWindow();
+            m1.ShowDialog(); // Avaa Main Windowin
         }
     }
 }
