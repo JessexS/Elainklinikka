@@ -26,5 +26,45 @@ namespace Eläinklinikka
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Omistajat o1 = new Omistajat();
+            this.Hide();
+            o1.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            HoitoJaLääkkeet h1 = new HoitoJaLääkkeet();
+            this.Hide();
+            h1.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Lääkärit l1 = new Lääkärit();
+            this.Hide();
+            l1.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Kalenteri k1 = new Kalenteri();
+            this.Hide();
+            k1.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            MainWindow m1 = new MainWindow();
+            this.Hide();
+            m1.ShowDialog();
+            this.Close();
+        }
     }
 }
