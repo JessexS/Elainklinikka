@@ -27,7 +27,16 @@ namespace Eläinklinikka
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            RegForm f2 = new RegForm();
+            f2.ShowDialog(); // Avaa Rekisteröimis Formin
+            this.Close();
+        }
 
+        private void LogBut_Click(object sender, RoutedEventArgs e)
+        {
+            LogForm f1 = new LogForm();
+            f1.ShowDialog(); // Avaa Kirjautumis Formin
+            this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

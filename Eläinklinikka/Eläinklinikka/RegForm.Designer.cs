@@ -1,4 +1,6 @@
-﻿namespace Eläinklinikka
+using System;
+
+namespace Eläinklinikka
 {
     partial class RegForm
     {
