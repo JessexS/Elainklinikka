@@ -17,16 +17,12 @@ namespace Eläinklinikka
             InitializeComponent();
         }
 
-        private void LogForm_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MainWindow m1 = new MainWindow();
-            m1.ShowDialog(); // Avaa Main Windowin
+            Eläimet e1 = new Eläimet();
             this.Hide();
+            e1.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -7,8 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="LogBut" Content="Kirjaudu" HorizontalAlignment="Left" Margin="310,109,0,0" VerticalAlignment="Top" FontFamily="Calibri" Height="20" Width="80" Click="LogBut_Click"/>
-        <Button x:Name="RegBut" Content="Rekisteröidy" HorizontalAlignment="Left" Margin="410,109,0,0" VerticalAlignment="Top" Click="Button_Click" FontFamily="Calibri" FontWeight="Normal" Height="20" Width="80"/>
-        <Calendar Margin="310,134,310,134" Width="180"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/dog-g341a8deaa_1280.png" Stretch="Uniform"/>
+        </Grid.Background>
+        <Button Content="Kirjaudu" HorizontalAlignment="Left" Margin="646,67,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click_1"/>
+        <Button Content="Rekisteröidy" HorizontalAlignment="Left" Margin="547,67,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click_2"/>
+        <Label Content="Clinical Pets Co.&#xD;&#xA;" HorizontalAlignment="Left" Margin="566,33,0,0" VerticalAlignment="Top" Width="142" Height="29" HorizontalContentAlignment="Center">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
     </Grid>
 </Window>

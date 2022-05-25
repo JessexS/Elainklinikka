@@ -38,5 +38,21 @@ namespace Eläinklinikka
             f1.ShowDialog(); // Avaa Kirjautumis Formin
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            LogForm l1 = new LogForm();
+            this.Hide();
+            l1.ShowDialog();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            RegForm r1 = new RegForm();
+            this.Hide();
+            r1.ShowDialog();
+            this.Close();
+        }
     }
 }

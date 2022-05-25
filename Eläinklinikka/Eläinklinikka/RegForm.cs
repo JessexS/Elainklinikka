@@ -23,19 +23,19 @@ namespace Eläinklinikka
             OleDbConnection dbcon = new OleDbConnection(constr);
             OleDbCommand cmd = dbcon.CreateCommand();
             dbcon.Open();
-            cmd.CommandText = "INSERT INTO [Udata] ( Uname, Pword, Pnumber ) Values ('" + Uname.Text + "','" + Pword.Text + "','" + Pnumber.Text + "')";
+            cmd.CommandText = "INSERT INTO Udata ( Uname, Pword, Pnumber ) Values ('" + Uname.Text + "','" + Pword.Text + "','" + Pnumber.Text + "')";
             cmd.Connection = dbcon;
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Rekisteröinti suoritettu!");
+            MessageBox.Show("Käyttäjä rekisteröity!");
             dbcon.Close();
-            this.Close();
         }
 
-        private void TakaisinButton_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Close();
-            MainWindow m1 = new MainWindow();
-            m1.ShowDialog(); // Avaa Main Windowin
+            MainWindow w1 = new MainWindow();
+            this.Hide();
+            w1.ShowDialog();
+            this.Close();
         }
     }
 }
