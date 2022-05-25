@@ -7,7 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Kirjaudu" HorizontalAlignment="Left" Margin="625,10,0,0" VerticalAlignment="Top" Width="80"/>
-        <Button Content="Rekisteröidy" HorizontalAlignment="Left" Margin="710,10,0,0" VerticalAlignment="Top" Width="80"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/dog-g341a8deaa_1280.png" Stretch="Uniform"/>
+        </Grid.Background>
+        <Button Content="Kirjaudu" HorizontalAlignment="Left" Margin="646,67,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click_1"/>
+        <Button Content="Rekisteröidy" HorizontalAlignment="Left" Margin="547,67,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click_2"/>
+        <Label Content="Clinical Pets Co.&#xD;&#xA;" HorizontalAlignment="Left" Margin="566,33,0,0" VerticalAlignment="Top" Width="142" Height="29" HorizontalContentAlignment="Center">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
     </Grid>
 </Window>
