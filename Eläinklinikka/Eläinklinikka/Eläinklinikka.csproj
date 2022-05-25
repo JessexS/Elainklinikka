@@ -77,6 +77,18 @@
     <Compile Include="Eläimet.Designer.cs">
       <DependentUpon>Eläimet.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoitoJaLääkkeet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoitoJaLääkkeet.Designer.cs">
+      <DependentUpon>HoitoJaLääkkeet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Omistajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Omistajat.Designer.cs">
+      <DependentUpon>Omistajat.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +122,12 @@
     </Compile>
     <EmbeddedResource Include="Eläimet.resx">
       <DependentUpon>Eläimet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoitoJaLääkkeet.resx">
+      <DependentUpon>HoitoJaLääkkeet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Omistajat.resx">
+      <DependentUpon>Omistajat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>

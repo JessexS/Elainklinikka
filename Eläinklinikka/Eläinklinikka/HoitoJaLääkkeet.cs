@@ -10,28 +10,18 @@ using System.Windows.Forms;
 
 namespace Eläinklinikka
 {
-    public partial class Eläimet : Form
+    public partial class HoitoJaLääkkeet : Form
     {
-        public Eläimet()
+        public HoitoJaLääkkeet()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-            MainWindow w1 = new MainWindow();
+            Eläimet e1 = new Eläimet();
             this.Hide();
-            w1.ShowDialog();
+            e1.ShowDialog();
             this.Close();
         }
 
@@ -43,11 +33,11 @@ namespace Eläinklinikka
             this.Close();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pictureBox7_Click(object sender, EventArgs e)
         {
-            HoitoJaLääkkeet h1 = new HoitoJaLääkkeet();
+            MainWindow w1 = new MainWindow();
             this.Hide();
-            h1.ShowDialog();
+            w1.ShowDialog();
             this.Close();
         }
     }

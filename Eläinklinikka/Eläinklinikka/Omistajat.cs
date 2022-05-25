@@ -10,36 +10,18 @@ using System.Windows.Forms;
 
 namespace Eläinklinikka
 {
-    public partial class Eläimet : Form
+    public partial class Omistajat : Form
     {
-        public Eläimet()
+        public Omistajat()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-            MainWindow w1 = new MainWindow();
+            Eläimet e1 = new Eläimet();
             this.Hide();
-            w1.ShowDialog();
-            this.Close();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Omistajat o1 = new Omistajat();
-            this.Hide();
-            o1.ShowDialog();
+            e1.ShowDialog();
             this.Close();
         }
 
