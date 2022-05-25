@@ -76,6 +76,18 @@
     <Compile Include="Eläimet.Designer.cs">
       <DependentUpon>Eläimet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kalenteri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kalenteri.Designer.cs">
+      <DependentUpon>Kalenteri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LääkäritJaToimisto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LääkäritJaToimisto.Designer.cs">
+      <DependentUpon>LääkäritJaToimisto.cs</DependentUpon>
+    </Compile>
     <Compile Include="HoitoJaLääkkeet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +133,12 @@
     </Compile>
     <EmbeddedResource Include="Eläimet.resx">
       <DependentUpon>Eläimet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kalenteri.resx">
+      <DependentUpon>Kalenteri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LääkäritJaToimisto.resx">
+      <DependentUpon>LääkäritJaToimisto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoitoJaLääkkeet.resx">
       <DependentUpon>HoitoJaLääkkeet.cs</DependentUpon>
