@@ -1,6 +1,6 @@
 ﻿namespace Eläinklinikka
 {
-    partial class Eläimet
+    partial class LogForm
     {
         /// <summary>
         /// Required designer variable.
