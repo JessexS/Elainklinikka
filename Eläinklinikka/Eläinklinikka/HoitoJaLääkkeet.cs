@@ -6,8 +6,10 @@ using System.Data;
 
 namespace Eläinklinikka
 {
+
     public partial class HoitoJaLääkkeet : Form
     {
+
         public HoitoJaLääkkeet()
         {
             InitializeComponent();
@@ -57,8 +59,7 @@ namespace Eläinklinikka
         {
 
         }
-
-        public void create()
+        public void Create()
         {
             var wb = new XLWorkbook();
             var dataSet = GetDataSet();
@@ -84,12 +85,25 @@ namespace Eläinklinikka
             table.Columns.Add("Lääkkeet ja hoito", typeof(string));
             table.Columns.Add("Kokonaissumma", typeof(int), "€");
 
-            table.Rows.Add(25, "Indocin", "David", DateTime.Now);
-            table.Rows.Add(50, "Enebrel", "Sam", DateTime.Now);
-            table.Rows.Add(10, "Hydralazine", "Christoff", DateTime.Now);
-            table.Rows.Add(21, "Combivent", "Janet", DateTime.Now);
-            table.Rows.Add(100, "Dilantin", "Melanie", DateTime.Now);
+            table.Rows.Add("hi", "Indocin", DateTime.Now, "h", 2);
+
             return table;
         }
+
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        {
+            HoitoData.Rows.Add();
+            HoitoData.Rows[0].Cells[0].Value = EläimenNimi.Text;
+            HoitoData.Rows.Add();
+            HoitoData.Rows[0].Cells[1].Value = OmistajanNimi.Text;
+            HoitoData.Rows.Add();
+            HoitoData.Rows[0].Cells[2].Value = LaskunPvmData.ValueType;
+            HoitoData.Rows.Add();
+            HoitoData.Rows[0].Cells[3].Value = LääkketHoito.Text;
+            
+        }
+       
     }
     }
+    
+    
