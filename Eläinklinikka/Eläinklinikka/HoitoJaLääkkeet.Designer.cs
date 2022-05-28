@@ -55,13 +55,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.OmistajanNimi = new Guna.UI.WinForms.GunaTextBox();
             this.HoitoData = new System.Windows.Forms.DataGridView();
             this.EläimenNimiData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OmistajanNimiData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LaskunPvmData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LääkketHoitoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SummaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OmistajanNimi = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -105,6 +105,7 @@
             this.gunaAdvenceButton5.TabIndex = 22;
             this.gunaAdvenceButton5.Text = "Tallenna";
             this.gunaAdvenceButton5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaAdvenceButton5.Click += new System.EventHandler(this.gunaAdvenceButton5_Click);
             // 
             // gunaAdvenceButton4
             // 
@@ -456,22 +457,6 @@
             this.panel2.Size = new System.Drawing.Size(703, 453);
             this.panel2.TabIndex = 0;
             // 
-            // OmistajanNimi
-            // 
-            this.OmistajanNimi.BaseColor = System.Drawing.Color.White;
-            this.OmistajanNimi.BorderColor = System.Drawing.Color.Silver;
-            this.OmistajanNimi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.OmistajanNimi.FocusedBaseColor = System.Drawing.Color.White;
-            this.OmistajanNimi.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.OmistajanNimi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.OmistajanNimi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.OmistajanNimi.Location = new System.Drawing.Point(43, 104);
-            this.OmistajanNimi.Name = "OmistajanNimi";
-            this.OmistajanNimi.PasswordChar = '\0';
-            this.OmistajanNimi.SelectedText = "";
-            this.OmistajanNimi.Size = new System.Drawing.Size(253, 30);
-            this.OmistajanNimi.TabIndex = 23;
-            // 
             // HoitoData
             // 
             this.HoitoData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -510,6 +495,22 @@
             // 
             this.SummaData.HeaderText = "Kokonaissumma";
             this.SummaData.Name = "SummaData";
+            // 
+            // OmistajanNimi
+            // 
+            this.OmistajanNimi.BaseColor = System.Drawing.Color.White;
+            this.OmistajanNimi.BorderColor = System.Drawing.Color.Silver;
+            this.OmistajanNimi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.OmistajanNimi.FocusedBaseColor = System.Drawing.Color.White;
+            this.OmistajanNimi.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.OmistajanNimi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.OmistajanNimi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.OmistajanNimi.Location = new System.Drawing.Point(43, 104);
+            this.OmistajanNimi.Name = "OmistajanNimi";
+            this.OmistajanNimi.PasswordChar = '\0';
+            this.OmistajanNimi.SelectedText = "";
+            this.OmistajanNimi.Size = new System.Drawing.Size(253, 30);
+            this.OmistajanNimi.TabIndex = 23;
             // 
             // HoitoJaLääkkeet
             // 

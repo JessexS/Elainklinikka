@@ -59,50 +59,57 @@ namespace Eläinklinikka
         {
 
         }
-        public void Create()
-        {
-            var wb = new XLWorkbook();
-            var dataSet = GetDataSet();
-            wb.Worksheets.Add(dataSet);
-            wb.SaveAs("Eläinklinikka.xlsx");
-            // Add all DataTables in the DataSet as a worksheets 
-        }
+        
 
-        private DataSet GetDataSet()
-        {
-            var ds = new DataSet();
-            ds.Tables.Add(GetTable("MaksuTable"));
-            return ds;
-        }
-
-        private DataTable GetTable(String tableName)
-        {
-            DataTable table = new DataTable();
-            table.TableName = tableName;
-            table.Columns.Add("Eläimen nimi", typeof(string));
-            table.Columns.Add("Omistajan nimi", typeof(string));
-            table.Columns.Add("Laskun päivämäärä", typeof(DateTime));
-            table.Columns.Add("Lääkkeet ja hoito", typeof(string));
-            table.Columns.Add("Kokonaissumma", typeof(int), "€");
-
-            table.Rows.Add("hi", "Indocin", DateTime.Now, "h", 2);
-
-            return table;
-        }
+        int i = 0;
 
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
-            HoitoData.Rows.Add();
-            HoitoData.Rows[0].Cells[0].Value = EläimenNimi.Text;
-            HoitoData.Rows.Add();
-            HoitoData.Rows[0].Cells[1].Value = OmistajanNimi.Text;
-            HoitoData.Rows.Add();
-            HoitoData.Rows[0].Cells[2].Value = LaskunPvmData.ValueType;
-            HoitoData.Rows.Add();
-            HoitoData.Rows[0].Cells[3].Value = LääkketHoito.Text;
             
+            HoitoData.Rows.Add();
+            HoitoData.Rows[i].Cells[0].Value = EläimenNimi.Text;
+            HoitoData.Rows.Add();
+            HoitoData.Rows[i].Cells[1].Value = OmistajanNimi.Text;
+            HoitoData.Rows.Add();
+            HoitoData.Rows[i].Cells[2].Value = LaskunPvmData.ValueType;
+            HoitoData.Rows.Add();
+            HoitoData.Rows[i].Cells[3].Value = LääkketHoito.Text;
+            i++;
         }
-       
+
+        private void gunaAdvenceButton5_Click(object sender, EventArgs e)
+        {
+            
+            {
+                var wb = new XLWorkbook();
+                var dataSet = GetDataSet();
+                wb.Worksheets.Add(dataSet);
+                wb.SaveAs("Eläinklinikka.xlsx");
+                // Add all DataTables in the DataSet as a worksheets 
+            }
+
+            DataSet GetDataSet()
+            {
+                var ds = new DataSet();
+                ds.Tables.Add(GetTable("MaksuTable"));
+                return ds;
+            }
+
+            DataTable GetTable(String tableName)
+            {
+                DataTable table = new DataTable();
+                table.TableName = tableName;
+                table.Columns.Add("Eläimen nimi", typeof(string));
+                table.Columns.Add("Omistajan nimi", typeof(string));
+                table.Columns.Add("Laskun päivämäärä", typeof(DateTime));
+                table.Columns.Add("Lääkkeet ja hoito", typeof(string));
+                table.Columns.Add("Kokonaissumma", typeof(int));
+
+                table.Rows.Add("hi", "Indocin", DateTime.Now, "h", 2);
+
+                return table;
+            }
+        }
     }
     }
     
