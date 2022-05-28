@@ -77,6 +77,8 @@ namespace Eläinklinikka
             i++;
         }
 
+
+        
         private void gunaAdvenceButton5_Click(object sender, EventArgs e)
         {
             
@@ -84,7 +86,8 @@ namespace Eläinklinikka
                 var wb = new XLWorkbook();
                 var dataSet = GetDataSet();
                 wb.Worksheets.Add(dataSet);
-                wb.SaveAs("Eläinklinikka.xlsx");
+                wb.SaveAs("C:\\Users\\OMISTAJA\\source\\repos\\Elainklinikka12\\Eläinklinikka\\Eläinklinikka\\Eläinklinikka.xlsx");
+                MessageBox.Show("Onnistui");
                 // Add all DataTables in the DataSet as a worksheets 
             }
 
@@ -97,15 +100,16 @@ namespace Eläinklinikka
 
             DataTable GetTable(String tableName)
             {
+                
                 DataTable table = new DataTable();
                 table.TableName = tableName;
                 table.Columns.Add("Eläimen nimi", typeof(string));
                 table.Columns.Add("Omistajan nimi", typeof(string));
                 table.Columns.Add("Laskun päivämäärä", typeof(DateTime));
                 table.Columns.Add("Lääkkeet ja hoito", typeof(string));
-                table.Columns.Add("Kokonaissumma", typeof(int));
+                table.Columns.Add("Kokonaissumma", typeof(string));
 
-                table.Rows.Add("hi", "Indocin", DateTime.Now, "h", 2);
+                table.Rows.Add("hi", "Indocin", DateTime.Now, "h", 2 + "€");
 
                 return table;
             }
