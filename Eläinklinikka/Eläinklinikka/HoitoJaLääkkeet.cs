@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML;
+using ClosedXML.Excel;
+using System.Data;
 
 namespace Eläinklinikka
 {
@@ -56,5 +52,44 @@ namespace Eläinklinikka
             e1.ShowDialog();
             this.Close();
         }
+
+        private void gunaTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void create()
+        {
+            var wb = new XLWorkbook();
+            var dataSet = GetDataSet();
+            wb.Worksheets.Add(dataSet);
+            wb.SaveAs("Eläinklinikka.xlsx");
+            // Add all DataTables in the DataSet as a worksheets 
+        }
+
+        private DataSet GetDataSet()
+        {
+            var ds = new DataSet();
+            ds.Tables.Add(GetTable("MaksuTable"));
+            return ds;
+        }
+
+        private DataTable GetTable(String tableName)
+        {
+            DataTable table = new DataTable();
+            table.TableName = tableName;
+            table.Columns.Add("Eläimen nimi", typeof(string));
+            table.Columns.Add("Omistajan nimi", typeof(string));
+            table.Columns.Add("Laskun päivämäärä", typeof(DateTime));
+            table.Columns.Add("Lääkkeet ja hoito", typeof(string));
+            table.Columns.Add("Kokonaissumma", typeof(int), "€");
+
+            table.Rows.Add(25, "Indocin", "David", DateTime.Now);
+            table.Rows.Add(50, "Enebrel", "Sam", DateTime.Now);
+            table.Rows.Add(10, "Hydralazine", "Christoff", DateTime.Now);
+            table.Rows.Add(21, "Combivent", "Janet", DateTime.Now);
+            table.Rows.Add(100, "Dilantin", "Melanie", DateTime.Now);
+            return table;
+        }
     }
-}
+    }

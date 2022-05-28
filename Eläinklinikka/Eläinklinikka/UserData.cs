@@ -2,10 +2,12 @@
 {
 }
 
-namespace Eläinklinikka {
-    
-    
-    public partial class UserData {
+namespace Eläinklinikka
+{
+
+
+    public partial class UserData
+    {
     }
 }
 
