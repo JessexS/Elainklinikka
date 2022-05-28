@@ -41,16 +41,23 @@
     <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
+    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
+    </Reference>
     <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
       <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
       <HintPath>E:\Online lataukset\Clinical Pet Co. Icons\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -86,6 +93,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="MaksuData.cs">
       <DependentUpon>MaksuData.xsd</DependentUpon>
@@ -202,6 +214,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
     <None Include="MaksuData.xsc">
       <DependentUpon>MaksuData.xsd</DependentUpon>
     </None>
@@ -213,7 +236,9 @@
     <None Include="MaksuData.xss">
       <DependentUpon>MaksuData.xsd</DependentUpon>
     </None>
-    <None Include="Eläinklinikka.xlsx" />
+    <None Include="Eläinklinikka.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\Guna UI Activation.vbproj" />
     <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Settings.settings" />
     <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\DesignTimeResolveAssemblyReferences.cache">
@@ -230,6 +255,174 @@
     </None>
     <None Include="Guna.UI-Framework-Lib-master\README.md" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ClosedXML.AttributeExtensions.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Attributes.XLColumnAttribute.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.Exceptions.CalcEngineException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.Exceptions.CellReferenceException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.Exceptions.CellValueException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.Exceptions.DivisionByZeroException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.Exceptions.NameNotRecognizedException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.Exceptions.NoValueAvailableException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.Exceptions.NullValueException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.Exceptions.NumberException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.ExpressionParseException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.Functions.XLMath.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.CalcEngine.IValueObject.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.Drawings.IXLPicture.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.Drawings.IXLPictures.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.Exceptions.ClosedXMLException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.Exceptions.EmptyTableException.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLAddress.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLAddressable.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLAlignment.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLAutoFilter.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLBorder.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCell.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCells.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCFColorScaleMax.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCFColorScaleMid.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCFColorScaleMin.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCFDataBarMax.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCFDataBarMin.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCFIconSet.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLChart.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCharts.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLColumn.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLColumns.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLComment.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLConditionalFormat.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLConditionalFormats.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCustomFilteredColumn.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCustomProperties.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLCustomProperty.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDataValidation.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDataValidations.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDateTimeGroupFilteredColumn.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDrawingAlignment.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDrawingColorsAndLines.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDrawingFont.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDrawingMargins.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDrawingPosition.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDrawingProperties.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDrawingProtection.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDrawingSize.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDrawingStyle.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLDrawingWeb.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLElementProtection.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLFileSharing.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLFill.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLFilterColumn.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLFilterConnector.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLFilteredColumn.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLFont.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLFontBase.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLHeaderFooter.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLHFItem.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLHyperlinks.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLMargins.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLNamedRange.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLNamedRanges.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLNumberFormat.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLNumberFormatBase.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLOutline.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPageSetup.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPhonetic.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPhonetics.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotField.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotFields.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotFieldStyleFormats.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotStyleFormat.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotStyleFormats.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotTable.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotTables.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotTableStyleFormats.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotValue.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotValueCombination.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotValueFormat.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotValues.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPivotValueStyleFormat.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLPrintAreas.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLProtectable.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLProtection.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRange.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRangeAddress.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRangeBase.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRangeColumn.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRangeColumns.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRangeRow.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRangeRows.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRanges.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRichString.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRichText.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRow.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLRows.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLSheetProtection.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLSheetView.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLSortElement.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLSortElements.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLSparkline.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLSparklineGroup.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLSparklineGroups.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLSparklineHorizontalAxis.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLSparklineStyle.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLSparklineVerticalAxis.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLStyle.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLTable.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLTableField.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLTableRange.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLTableRow.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLTableRows.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLTables.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLTheme.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLValidationCriteria.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLWithRichString.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLWorkbook.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLWorkbookProtection.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLWorksheet.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.IXLWorksheets.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.LoadOptions.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.SaveOptions.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLAlignmentKey.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLAlignmentValue.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLColor.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLConstants+PivotTable.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLConstants.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLDateCriteria.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLDecimalCriteria.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLFormula.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLHelper.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLHyperlink.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLPredefinedFormat+DateTime.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLPredefinedFormat+Number.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLPredefinedFormat.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLProtectionAlgorithm+Algorithm.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLProtectionAlgorithm.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLSparklineTheme.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLTableTheme.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLTextLengthCriteria.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLTimeCriteria.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLValidationCriteria.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLWholeNumberCriteria.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLWorkbook.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Excel.XLWorkbookProperties.datasource" />
+    <None Include="Properties\DataSources\ClosedXML.Utils.XmlEncoder.datasource" />
+    <None Include="Properties\DataSources\Excel.Core.FormatReader.datasource" />
+    <None Include="Properties\DataSources\Excel.Core.OpenXmlFormat.XmlReaderExtensions.datasource" />
+    <None Include="Properties\DataSources\Excel.Core.ReferenceHelper.datasource" />
+    <None Include="Properties\DataSources\Excel.Core.ZipWorker.datasource" />
+    <None Include="Properties\DataSources\Excel.ExcelBinaryReader.datasource" />
+    <None Include="Properties\DataSources\Excel.ExcelOpenXmlReader.datasource" />
+    <None Include="Properties\DataSources\Excel.ExcelReaderFactory.datasource" />
+    <None Include="Properties\DataSources\Excel.Exceptions.BiffRecordException.datasource" />
+    <None Include="Properties\DataSources\Excel.Exceptions.HeaderException.datasource" />
+    <None Include="Properties\DataSources\Excel.IExcelDataReader.datasource" />
+    <None Include="Properties\DataSources\Excel.Log.ILog.datasource" />
+    <None Include="Properties\DataSources\Excel.Log.Log.datasource" />
+    <None Include="Properties\DataSources\Excel.Log.LogExtensions.datasource" />
+    <None Include="Properties\DataSources\Excel.Log.Logger.NullLog.datasource" />
+    <None Include="Properties\DataSources\Excel.Log.LogManager.datasource" />
+    <None Include="Properties\DataSources\Excel.Log.StringExtensions.datasource" />
+    <None Include="Properties\DataSources\ExcelNumberFormat.NumberFormat.datasource" />
     <None Include="UserData.xsc">
       <DependentUpon>UserData.xsd</DependentUpon>
     </None>
@@ -340,6 +533,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

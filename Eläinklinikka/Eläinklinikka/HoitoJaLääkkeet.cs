@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using ClosedXML;
 using ClosedXML.Excel;
 using System.Data;
+using System.IO;
+using Excel;
 
 namespace Eläinklinikka
 {
@@ -59,35 +60,34 @@ namespace Eläinklinikka
         {
 
         }
-        
 
-        int i = 0;
+        // Excel data set connection
+        DataSet ds;
 
+        private void Hoitojalääkkeet_load(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog()
+            { Filter = "Excel Workbook|*.xlsx", ValidateNames = true })
+            {
+                    if (dialog.ShowDialog()==DialogResult.OK)
+                {
+                    FileStream filestream = File.Open(dialog.FileName, FileMode.Open, FileAccess.Read);
+                    IExcelDataReader reader = ExcelReaderFactory.CreateBinaryReader(filestream);
+                    reader.IsFirstRowAsColumnNames = true;
+                    ds = reader.AsDataSet();
+                    GridResult.DataSource = ds.Tables[0];
+                }
+            }
+        }
+        //end
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
-            
-            HoitoData.Rows.Add();
-            HoitoData.Rows[i].Cells[0].Value = EläimenNimi.Text;
-            HoitoData.Rows.Add();
-            HoitoData.Rows[i].Cells[1].Value = OmistajanNimi.Text;
-            HoitoData.Rows.Add();
-            HoitoData.Rows[i].Cells[2].Value = LaskunPvmData.ValueType;
-            HoitoData.Rows.Add();
-            HoitoData.Rows[i].Cells[3].Value = LääkketHoito.Text;
-            i++;
-        }
-
-
-        
-        private void gunaAdvenceButton5_Click(object sender, EventArgs e)
-        {
-            
             {
                 var wb = new XLWorkbook();
                 var dataSet = GetDataSet();
                 wb.Worksheets.Add(dataSet);
                 wb.SaveAs("C:\\Users\\OMISTAJA\\source\\repos\\Elainklinikka12\\Eläinklinikka\\Eläinklinikka\\Eläinklinikka.xlsx");
-                MessageBox.Show("Onnistui");
+                MessageBox.Show("Tallennus Onnistui");
                 // Add all DataTables in the DataSet as a worksheets 
             }
 
@@ -100,7 +100,7 @@ namespace Eläinklinikka
 
             DataTable GetTable(String tableName)
             {
-                
+
                 DataTable table = new DataTable();
                 table.TableName = tableName;
                 table.Columns.Add("Eläimen nimi", typeof(string));
@@ -109,10 +109,20 @@ namespace Eläinklinikka
                 table.Columns.Add("Lääkkeet ja hoito", typeof(string));
                 table.Columns.Add("Kokonaissumma", typeof(string));
 
-                table.Rows.Add("hi", "Indocin", DateTime.Now, "h", 2 + "€");
+                table.Rows.Add(EläimenNimi, "Indocin", DateTime.Now, "h", 2 + "€");
 
                 return table;
             }
+        }
+        
+        private void gunaAdvenceButton5_Click(object sender, EventArgs e)
+        {
+  
+        }
+
+        private void DataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoitoJaLääkkeet));
             this.gunaAdvenceButton5 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton4 = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -55,13 +56,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.HoitoData = new System.Windows.Forms.DataGridView();
-            this.EläimenNimiData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OmistajanNimiData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LaskunPvmData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LääkketHoitoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SummaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OmistajanNimi = new Guna.UI.WinForms.GunaTextBox();
+            this.numberFormatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataSet31 = new Eläinklinikka.DataSet3();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -70,7 +68,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HoitoData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberFormatBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaAdvenceButton5
@@ -438,7 +438,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(208)))), ((int)(((byte)(169)))));
-            this.panel2.Controls.Add(this.HoitoData);
+            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.OmistajanNimi);
             this.panel2.Controls.Add(this.gunaAdvenceButton5);
             this.panel2.Controls.Add(this.gunaAdvenceButton4);
@@ -457,45 +457,6 @@
             this.panel2.Size = new System.Drawing.Size(703, 453);
             this.panel2.TabIndex = 0;
             // 
-            // HoitoData
-            // 
-            this.HoitoData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.HoitoData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EläimenNimiData,
-            this.OmistajanNimiData,
-            this.LaskunPvmData,
-            this.LääkketHoitoData,
-            this.SummaData});
-            this.HoitoData.Location = new System.Drawing.Point(43, 140);
-            this.HoitoData.Name = "HoitoData";
-            this.HoitoData.Size = new System.Drawing.Size(542, 207);
-            this.HoitoData.TabIndex = 26;
-            // 
-            // EläimenNimiData
-            // 
-            this.EläimenNimiData.HeaderText = "Eläimen nimi";
-            this.EläimenNimiData.Name = "EläimenNimiData";
-            // 
-            // OmistajanNimiData
-            // 
-            this.OmistajanNimiData.HeaderText = "Omistajan nimi";
-            this.OmistajanNimiData.Name = "OmistajanNimiData";
-            // 
-            // LaskunPvmData
-            // 
-            this.LaskunPvmData.HeaderText = "Laskun päivämäärä";
-            this.LaskunPvmData.Name = "LaskunPvmData";
-            // 
-            // LääkketHoitoData
-            // 
-            this.LääkketHoitoData.HeaderText = "Lääkkeet ja hoito";
-            this.LääkketHoitoData.Name = "LääkketHoitoData";
-            // 
-            // SummaData
-            // 
-            this.SummaData.HeaderText = "Kokonaissumma";
-            this.SummaData.Name = "SummaData";
-            // 
             // OmistajanNimi
             // 
             this.OmistajanNimi.BaseColor = System.Drawing.Color.White;
@@ -511,6 +472,25 @@
             this.OmistajanNimi.SelectedText = "";
             this.OmistajanNimi.Size = new System.Drawing.Size(253, 30);
             this.OmistajanNimi.TabIndex = 23;
+            // 
+            // numberFormatBindingSource
+            // 
+            this.numberFormatBindingSource.DataSource = typeof(ExcelNumberFormat.NumberFormat);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.dataSet31;
+            this.dataGridView1.Location = new System.Drawing.Point(43, 144);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(542, 206);
+            this.dataGridView1.TabIndex = 24;
+            // 
+            // dataSet31
+            // 
+            this.dataSet31.DataSetName = "DataSet3";
+            this.dataSet31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // HoitoJaLääkkeet
             // 
@@ -531,7 +511,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HoitoData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberFormatBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -565,11 +547,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI.WinForms.GunaTextBox OmistajanNimi;
-        private System.Windows.Forms.DataGridView HoitoData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EläimenNimiData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OmistajanNimiData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LaskunPvmData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LääkketHoitoData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SummaData;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource numberFormatBindingSource;
+        private DataSet3 dataSet31;
     }
 }
