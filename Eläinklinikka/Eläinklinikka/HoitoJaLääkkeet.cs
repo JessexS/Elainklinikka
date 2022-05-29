@@ -62,24 +62,25 @@ namespace Eläinklinikka
         }
 
         // Excel data set connection
-        DataSet ds;
+        //DataSet ds;
 
-        private void Hoitojalääkkeet_load(object sender, EventArgs e)
-        {
-            using (OpenFileDialog dialog = new OpenFileDialog()
-            { Filter = "Excel Workbook|*.xlsx", ValidateNames = true })
-            {
-                    if (dialog.ShowDialog()==DialogResult.OK)
-                {
-                    FileStream filestream = File.Open(dialog.FileName, FileMode.Open, FileAccess.Read);
-                    IExcelDataReader reader = ExcelReaderFactory.CreateBinaryReader(filestream);
-                    reader.IsFirstRowAsColumnNames = true;
-                    ds = reader.AsDataSet();
-                    GridResult.DataSource = ds.Tables[0];
-                }
-            }
-        }
+        //private void Hoitojalääkkeet_load(object sender, EventArgs e)
+        //{
+        //    using (OpenFileDialog dialog = new OpenFileDialog()
+        //    { Filter = "Excel Workbook|*.xlsx", ValidateNames = true })
+        //    {
+        //            if (dialog.ShowDialog()==DialogResult.OK)
+        //        {
+        //            FileStream filestream = File.Open(dialog.FileName, FileMode.Open, FileAccess.Read);
+        //            IExcelDataReader reader = ExcelReaderFactory.CreateBinaryReader(filestream);
+        //            reader.IsFirstRowAsColumnNames = true;
+        //            ds = reader.AsDataSet();
+        //            GridResult.DataSource = ds.Tables[0];
+        //        }
+        //    }
+        //}
         //end
+
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
             {

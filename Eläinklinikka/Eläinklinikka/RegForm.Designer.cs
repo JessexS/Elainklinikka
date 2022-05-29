@@ -111,8 +111,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 450);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.Pnumber);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Pword);
             this.Controls.Add(this.label2);

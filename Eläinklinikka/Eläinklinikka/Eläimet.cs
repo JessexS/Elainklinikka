@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
 namespace Eläinklinikka
 {
     public partial class Eläimet : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\peura\source\repos\Elainklinikka\eläinklinikka\Eläinklinikka\Eläinklinikka\Eläinklinikka.mdb");
+        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + Application.StartupPath + "/Eläinklinikka.mdb");
         public Eläimet()
         {
             InitializeComponent();
@@ -74,10 +78,10 @@ namespace Eläinklinikka
         private void gunaTallenna_Click(object sender, EventArgs e)
         {
             con.Open();
-            OleDbCommand cmd = new OleDbCommand("Insert into Eläin (Eläimen_nimi, Omistajan_nimi, Syntymäpäivä, Laji, Tila, Sairaudet, Lääkkeet)Values('" + gunaNimi.Text + "','" + gunaOnimi.Text + "','" + gunaAika.Text + "','" + gunaLaji.Text + "','" + gunaTila.Text + ")", con);
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO Eläin ( Eläimen_nimi, Omistajan_nimi, Syntymäpäivä, Laji, Tila, Sairaudet, Lääkkeet ) Values('" + gunaNimi.Text + "','" + gunaOnimi.Text + "','" + gunaAika.Text + "','" + gunaLaji.Text + "','" + gunaTila.Text + ")", con);
             cmd.ExecuteNonQuery();
-            cmd = new OleDbCommand("Insert into Hoito (Sairaudet, Lääkkeet)Values('" + gunaSairaudet.Text + "','" + gunaLääkitys.Text + ")", con);
-            cmd.ExecuteNonQuery();
+            //cmd = new OleDbCommand("Insert into Hoito (Sairaudet, Lääkkeet)Values('" + gunaSairaudet.Text + "','" + gunaLääkitys.Text + ")", con);
+            //cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Tallennettu...");
 
@@ -88,7 +92,7 @@ namespace Eläinklinikka
         {
             con.Open();
             OleDbDataAdapter da = new OleDbDataAdapter("Select Eläimen_nimi, Omistajan_nimi, Syntymäpäivä, Laji, Tila from Eläin order by Eläimen_nimi",con);
-            DataGridTableStyle dt = new DataGridTableStyle();
+            DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();

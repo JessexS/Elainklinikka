@@ -56,10 +56,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.GridResult = new System.Windows.Forms.DataGridView();
+            this.dataSet31 = new Eläinklinikka.DataSet3();
             this.OmistajanNimi = new Guna.UI.WinForms.GunaTextBox();
             this.numberFormatBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataSet31 = new Eläinklinikka.DataSet3();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -68,9 +68,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numberFormatBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberFormatBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaAdvenceButton5
@@ -438,7 +438,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(208)))), ((int)(((byte)(169)))));
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.GridResult);
             this.panel2.Controls.Add(this.OmistajanNimi);
             this.panel2.Controls.Add(this.gunaAdvenceButton5);
             this.panel2.Controls.Add(this.gunaAdvenceButton4);
@@ -456,6 +456,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(703, 453);
             this.panel2.TabIndex = 0;
+            // 
+            // GridResult
+            // 
+            this.GridResult.AutoGenerateColumns = false;
+            this.GridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridResult.DataSource = this.dataSet31;
+            this.GridResult.Location = new System.Drawing.Point(43, 144);
+            this.GridResult.Name = "GridResult";
+            this.GridResult.Size = new System.Drawing.Size(542, 206);
+            this.GridResult.TabIndex = 24;
+            // 
+            // dataSet31
+            // 
+            this.dataSet31.DataSetName = "DataSet3";
+            this.dataSet31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // OmistajanNimi
             // 
@@ -477,21 +492,6 @@
             // 
             this.numberFormatBindingSource.DataSource = typeof(ExcelNumberFormat.NumberFormat);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.dataSet31;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 144);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(542, 206);
-            this.dataGridView1.TabIndex = 24;
-            // 
-            // dataSet31
-            // 
-            this.dataSet31.DataSetName = "DataSet3";
-            this.dataSet31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // HoitoJaLääkkeet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,9 +511,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numberFormatBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberFormatBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -547,7 +547,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI.WinForms.GunaTextBox OmistajanNimi;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridResult;
         private System.Windows.Forms.BindingSource numberFormatBindingSource;
         private DataSet3 dataSet31;
     }

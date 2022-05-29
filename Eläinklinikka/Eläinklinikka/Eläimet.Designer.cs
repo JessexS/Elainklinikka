@@ -56,11 +56,11 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLaji = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTila = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaNimi = new Guna.UI.WinForms.GunaTextBox();
             this.gunaAika = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.gunaTila = new Guna.UI.WinForms.GunaTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -217,6 +217,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(208)))), ((int)(((byte)(169)))));
+            this.panel2.Controls.Add(this.gunaTila);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.gunaLabel5);
             this.panel2.Controls.Add(this.gunaOnimi);
@@ -230,7 +231,6 @@
             this.panel2.Controls.Add(this.gunaLabel1);
             this.panel2.Controls.Add(this.gunaLaji);
             this.panel2.Controls.Add(this.gunaLabel4);
-            this.panel2.Controls.Add(this.gunaTila);
             this.panel2.Controls.Add(this.gunaLabel3);
             this.panel2.Controls.Add(this.gunaLabel2);
             this.panel2.Controls.Add(this.gunaNimi);
@@ -453,27 +453,6 @@
             this.gunaLabel4.TabIndex = 8;
             this.gunaLabel4.Text = "Eläimen syntymäaika";
             // 
-            // gunaTila
-            // 
-            this.gunaTila.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTila.BaseColor = System.Drawing.Color.White;
-            this.gunaTila.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTila.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaTila.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaTila.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTila.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaTila.ForeColor = System.Drawing.Color.Black;
-            this.gunaTila.FormattingEnabled = true;
-            this.gunaTila.Items.AddRange(new object[] {
-            "Elossa",
-            "Kuollut"});
-            this.gunaTila.Location = new System.Drawing.Point(43, 94);
-            this.gunaTila.Name = "gunaTila";
-            this.gunaTila.OnHoverItemBaseColor = System.Drawing.Color.White;
-            this.gunaTila.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaTila.Size = new System.Drawing.Size(253, 26);
-            this.gunaTila.TabIndex = 7;
-            // 
             // gunaLabel3
             // 
             this.gunaLabel3.AutoSize = true;
@@ -534,6 +513,22 @@
             this.gunaAika.Text = "keskiviikko 25. toukokuuta 2022";
             this.gunaAika.Value = new System.DateTime(2022, 5, 25, 16, 34, 15, 389);
             // 
+            // gunaTila
+            // 
+            this.gunaTila.BaseColor = System.Drawing.Color.White;
+            this.gunaTila.BorderColor = System.Drawing.Color.Silver;
+            this.gunaTila.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gunaTila.FocusedBaseColor = System.Drawing.Color.White;
+            this.gunaTila.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaTila.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.gunaTila.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaTila.Location = new System.Drawing.Point(43, 94);
+            this.gunaTila.Name = "gunaTila";
+            this.gunaTila.PasswordChar = '\0';
+            this.gunaTila.SelectedText = "";
+            this.gunaTila.Size = new System.Drawing.Size(253, 30);
+            this.gunaTila.TabIndex = 26;
+            // 
             // Eläimet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,7 +577,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaTextBox gunaLaji;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
-        private Guna.UI.WinForms.GunaComboBox gunaTila;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaTextBox gunaNimi;
@@ -593,5 +587,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaTextBox gunaOnimi;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI.WinForms.GunaTextBox gunaTila;
     }
 }

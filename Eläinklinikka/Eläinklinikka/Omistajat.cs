@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Data;
+
 namespace Eläinklinikka
 {
     public partial class Omistajat : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\peura\source\repos\Elainklinikka\eläinklinikka\Eläinklinikka\Eläinklinikka\Eläinklinikka.mdb");
+        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + Application.StartupPath + "/Eläinklinikka.mdb");
         public Omistajat()
         {
             InitializeComponent();
@@ -70,7 +72,7 @@ namespace Eläinklinikka
         {
             con.Open();
             OleDbDataAdapter da = new OleDbDataAdapter("Select * from Omistaja order by Omistajan_nimi", con);
-            DataGridTableStyle dt = new DataGridTableStyle();
+            DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();
