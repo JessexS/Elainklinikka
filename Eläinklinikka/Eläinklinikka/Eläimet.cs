@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace Eläinklinikka
 {
     public partial class Eläimet : Form
     {
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\peura\source\repos\Elainklinikka\eläinklinikka\Eläinklinikka\Eläinklinikka\Eläinklinikka.mdb");
         public Eläimet()
         {
             InitializeComponent();
@@ -67,6 +69,55 @@ namespace Eläinklinikka
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void gunaTallenna_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand("Insert into Eläin (Eläimen_nimi, Omistajan_nimi, Syntymäpäivä, Laji, Tila, Sairaudet, Lääkkeet)Values('" + gunaNimi.Text + "','" + gunaOnimi.Text + "','" + gunaAika.Text + "','" + gunaLaji.Text + "','" + gunaTila.Text + ")", con);
+            cmd.ExecuteNonQuery();
+            cmd = new OleDbCommand("Insert into Hoito (Sairaudet, Lääkkeet)Values('" + gunaSairaudet.Text + "','" + gunaLääkitys.Text + ")", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Tallennettu...");
+
+            fillgrid();
+        }
+
+        void fillgrid()
+        {
+            con.Open();
+            OleDbDataAdapter da = new OleDbDataAdapter("Select Eläimen_nimi, Omistajan_nimi, Syntymäpäivä, Laji, Tila from Eläin order by Eläimen_nimi",con);
+            DataGridTableStyle dt = new DataGridTableStyle();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+        }
+
+        private void gunaPäivitä_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand("Update Eläin set Eläimen_nimi='" + gunaNimi.Text + "', Omistajan_nimi='" + gunaOnimi.Text + "', Syntymäpäivä='" + gunaAika.Text + "', Laji='" + gunaLaji.Text + "', Tila='" + gunaTila.Text + " where Eläimen_nimi= '" + gunaNimi.Text +" ", con);
+            cmd.ExecuteNonQuery();
+            cmd = new OleDbCommand("Update Hoito set Sairaudet='" + gunaSairaudet.Text + "', Lääkkeet='" + gunaLääkitys + " ", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Päivitetty...");
+
+            fillgrid();
+;        }
+
+        private void gunaPoista_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand("Delete From Eläin where Eläimen_nimi=" + gunaNimi.Text + " ", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Poistettu...");
+
+            fillgrid();
+
 
         }
     }
