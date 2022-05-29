@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
-
+using System.Data.OleDb;
 namespace Eläinklinikka
 {
     public partial class Omistajat : Form
     {
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\peura\source\repos\Elainklinikka\eläinklinikka\Eläinklinikka\Eläinklinikka\Eläinklinikka.mdb");
         public Omistajat()
         {
             InitializeComponent();
@@ -53,6 +54,49 @@ namespace Eläinklinikka
             this.Hide();
             e1.ShowDialog();
             this.Close();
+        }
+
+        private void gunaTallenna_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand("Insert into Omistaja (Omistajan_nimi, Sähköposti, Eläimen_nimi, Osoite, Puhelin)values('" + gunaOnimi.Text + "','" + gunaSposti.Text + "','" + gunaOeläin.Text + "','" + gunaOsoite.Text + "','" + gunaPnume.Text + ")", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Tallennettu...");
+
+            fillgrid(); 
+        }
+        void fillgrid()
+        {
+            con.Open();
+            OleDbDataAdapter da = new OleDbDataAdapter("Select * from Omistaja order by Omistajan_nimi", con);
+            DataGridTableStyle dt = new DataGridTableStyle();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+        }
+
+        private void gunaPäivitä_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand("Update Omistaja set Omistajan_nimi='" + gunaOnimi.Text + "', Eläimen_nimi='" + gunaOeläin.Text + "', Osoite='" + gunaOsoite.Text + "', Sähköposti='" + gunaSposti.Text + "', Puhelin='" + gunaPnume.Text + " where Omistajan_nimi '" + gunaOnimi.Text + " ", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Päivitetty...");
+
+            fillgrid();
+        }
+
+        private void gunaPoista_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand("Delete From Omistaja where Omistajan_nimi=" + gunaOnimi.Text + " ", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Poistettu...");
+
+            fillgrid();
+
         }
     }
 }
