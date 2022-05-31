@@ -67,7 +67,7 @@ namespace Eläinklinikka
         {
             con.Open();
             OleDbCommand cmd = new OleDbCommand("Insert into Käynnit (Omistajan_nimi, Eläimen_nimi, Varattu_aika )values(" + gunaAjan.Text + "," + gunaEnimi.Text + "," + gunaAika.Text + ")", con);
-            cmd.ExecuteNonQuery();
+            _ = cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Tallennettu...");
         }
