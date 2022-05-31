@@ -1,3 +1,3 @@
-# Elainklinikka
+# Valmis ja viimeinen versio on Kopio branch
 
-Rekisteröinti pitäisi toimia mutta ei lisää accessiin tietoja, koodi toimii.
+
