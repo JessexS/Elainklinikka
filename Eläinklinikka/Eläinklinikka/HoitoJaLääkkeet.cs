@@ -129,7 +129,7 @@ namespace Eläinklinikka
             try
             {
                 oXL = new Microsoft.Office.Interop.Excel.Application();
-                oWB = oXL.Workbooks.Open("C:\\Users\\OMISTAJA\\source\\repos\\Elainklinikka12\\Eläinklinikka\\Eläinklinikka\\bin\\Debug\\EläinklinikkaData.xlsx");
+                oWB = oXL.Workbooks.Open("C:\\Users\\peura\\source\\Repos\\JessexS\\Elainklinikka\\Eläinklinikka\\Eläinklinikka\\bin\\Debug\\EläinklinikkaData.xlsx");
                 oSheet = String.IsNullOrEmpty(sheetName) ? (Microsoft.Office.Interop.Excel._Worksheet)oWB.ActiveSheet : (Microsoft.Office.Interop.Excel._Worksheet)oWB.Worksheets[sheetName];
 
                 oSheet.Cells[row, col] = data;
@@ -146,7 +146,7 @@ namespace Eläinklinikka
                     oWB.Close();
 
                 // GridView päivitys
-                string file = "C:\\Users\\OMISTAJA\\source\\repos\\Elainklinikka12\\Eläinklinikka\\Eläinklinikka\\bin\\Debug\\EläinklinikkaData.xlsx";
+                string file = "C:\\Users\\peura\\source\\Repos\\JessexS\\Elainklinikka\\Eläinklinikka\\Eläinklinikka\\bin\\Debug\\EläinklinikkaData.xlsx";
                 string path = file;
                 ExcelFileReader(path);
                 // End
