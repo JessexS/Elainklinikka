@@ -4,6 +4,9 @@ using ClosedXML.Excel;
 using System.Data;
 using System.IO;
 using Excel;
+using IronXL;
+using System.Linq;
+using OfficeOpenXml;
 
 namespace Eläinklinikka
 {
@@ -61,69 +64,96 @@ namespace Eläinklinikka
 
         }
 
-        // Excel data set connection
-        DataSet ds;
-
-        private void Hoitojalääkkeet_load(object sender, EventArgs e)
+        public void gunaAdvenceButton5_Click(object sender, EventArgs e) // Tallenna btn
         {
-            using (OpenFileDialog dialog = new OpenFileDialog()
-            { Filter = "Excel Workbook|*.xlsx", ValidateNames = true })
-            {
-                    if (dialog.ShowDialog()==DialogResult.OK)
-                {
-                    FileStream filestream = File.Open(dialog.FileName, FileMode.Open, FileAccess.Read);
-                    IExcelDataReader reader = ExcelReaderFactory.CreateBinaryReader(filestream);
-                    reader.IsFirstRowAsColumnNames = true;
-                    ds = reader.AsDataSet();
-                    GridResult.DataSource = ds.Tables[0];
-                }
-            }
-        }
-        //end
-        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
-        {
-            {
-                var wb = new XLWorkbook();
-                var dataSet = GetDataSet();
-                wb.Worksheets.Add(dataSet);
-                wb.SaveAs("C:\\Users\\OMISTAJA\\source\\repos\\Elainklinikka12\\Eläinklinikka\\Eläinklinikka\\Eläinklinikka.xlsx");
-                MessageBox.Show("Tallennus Onnistui");
-                // Add all DataTables in the DataSet as a worksheets 
-            }
-
-            DataSet GetDataSet()
-            {
-                var ds = new DataSet();
-                ds.Tables.Add(GetTable("MaksuTable"));
-                return ds;
-            }
-
-            DataTable GetTable(String tableName)
-            {
-
-                DataTable table = new DataTable();
-                table.TableName = tableName;
-                table.Columns.Add("Eläimen nimi", typeof(string));
-                table.Columns.Add("Omistajan nimi", typeof(string));
-                table.Columns.Add("Laskun päivämäärä", typeof(DateTime));
-                table.Columns.Add("Lääkkeet ja hoito", typeof(string));
-                table.Columns.Add("Kokonaissumma", typeof(string));
-
-                table.Rows.Add(EläimenNimi, "Indocin", DateTime.Now, "h", 2 + "€");
-
-                return table;
-            }
-        }
-        
-        private void gunaAdvenceButton5_Click(object sender, EventArgs e)
-        {
-  
+            
         }
 
         private void DataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void gunaAdvenceButton4_Click(object sender, EventArgs e) //3 btn
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+       
+        private void gunaAdvenceButton2_Click(object sender, EventArgs e) // Päivitä btn
+        {
+            
+        }
+
+        // GridView päivitys setup
+        public void ExcelFileReader(string path)
+        {
+            var stream = File.Open(path, FileMode.Open, FileAccess.Read);
+            var reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            var result = reader.AsDataSet();
+            var tables = result.Tables.Cast<DataTable>();
+            foreach (DataTable table in tables)
+            {
+                dataGridView1.DataSource = table;
+            }
+        }
+        // Setup end
+
+        int i = 1;
+
+        public void gunaAdvenceButton1_Click(object sender, EventArgs e) // Lisää btn
+        {
+            // Excel tekstin päivitys 
+            UpdateExcel("Sheet1", i, 1, EläimenNimi.Text);
+            UpdateExcel("Sheet1", i, 2, OmistajanNimi.Text);
+            UpdateExcel("Sheet1", i, 3, LaskunPäivä.Text);
+            UpdateExcel("Sheet1", i, 4, LääkketHoito.Text);
+            UpdateExcel("Sheet1", i, 5, Kokonaissumma.Text);
+        }
+
+        private void UpdateExcel(string sheetName, int row, int col, string data)
+        {
+            Microsoft.Office.Interop.Excel.Application oXL = null;
+            Microsoft.Office.Interop.Excel._Workbook oWB = null;
+            Microsoft.Office.Interop.Excel._Worksheet oSheet = null;
+
+            try
+            {
+                oXL = new Microsoft.Office.Interop.Excel.Application();
+                oWB = oXL.Workbooks.Open("C:\\Users\\OMISTAJA\\source\\repos\\Elainklinikka12\\Eläinklinikka\\Eläinklinikka\\bin\\Debug\\EläinklinikkaData.xlsx");
+                oSheet = String.IsNullOrEmpty(sheetName) ? (Microsoft.Office.Interop.Excel._Worksheet)oWB.ActiveSheet : (Microsoft.Office.Interop.Excel._Worksheet)oWB.Worksheets[sheetName];
+
+                oSheet.Cells[row, col] = data;
+
+                oWB.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (oWB != null)
+                    oWB.Close();
+
+                // GridView päivitys
+                string file = "C:\\Users\\OMISTAJA\\source\\repos\\Elainklinikka12\\Eläinklinikka\\Eläinklinikka\\bin\\Debug\\EläinklinikkaData.xlsx";
+                string path = file;
+                ExcelFileReader(path);
+                // End
+            }
+        }
+
     }
     }
     

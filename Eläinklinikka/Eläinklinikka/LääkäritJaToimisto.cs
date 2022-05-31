@@ -54,5 +54,10 @@ namespace Eläinklinikka
             e1.ShowDialog();
             this.Close();
         }
+
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
