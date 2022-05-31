@@ -107,7 +107,7 @@
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel5.Location = new System.Drawing.Point(462, 318);
+            this.gunaLabel5.Location = new System.Drawing.Point(40, 159);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(95, 15);
             this.gunaLabel5.TabIndex = 12;
@@ -122,7 +122,7 @@
             this.Kokonaissumma.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.Kokonaissumma.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.Kokonaissumma.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Kokonaissumma.Location = new System.Drawing.Point(465, 336);
+            this.Kokonaissumma.Location = new System.Drawing.Point(43, 177);
             this.Kokonaissumma.Name = "Kokonaissumma";
             this.Kokonaissumma.PasswordChar = '\0';
             this.Kokonaissumma.SelectedText = "";
@@ -409,7 +409,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 158);
+            this.dataGridView1.Location = new System.Drawing.Point(43, 238);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(542, 150);

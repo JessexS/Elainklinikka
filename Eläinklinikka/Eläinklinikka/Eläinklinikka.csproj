@@ -114,7 +114,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Excel.cs" />
+    <Compile Include="Excel.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Eläimet.cs">
       <SubType>Form</SubType>
     </Compile>

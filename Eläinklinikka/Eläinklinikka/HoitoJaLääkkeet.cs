@@ -4,9 +4,8 @@ using ClosedXML.Excel;
 using System.Data;
 using System.IO;
 using Excel;
-using IronXL;
 using System.Linq;
-using OfficeOpenXml;
+
 
 namespace Eläinklinikka
 {
