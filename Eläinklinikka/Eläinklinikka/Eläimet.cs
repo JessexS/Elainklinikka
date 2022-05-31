@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
 
 namespace Eläinklinikka
 {
     public partial class Eläimet : Form
     {
+        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + Application.StartupPath + "/Eläinklinikka.mdb");
         public Eläimet()
         {
             InitializeComponent();
@@ -68,6 +73,29 @@ namespace Eläinklinikka
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void gunaTallenna_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO Eläin ( Eläimen_nimi, Omistajan_nimi, Syntymäpäivä, Laji, Tila, Sairaudet, Lääkkeet ) Values(" + gunaNimi.Text + "," + gunaTila.Text + ",'" + gunaAika.Text + "," + gunaLaji.Text + "," + gunaTila.Text + ")", con);
+            cmd.ExecuteNonQuery();
+            //cmd = new OleDbCommand("Insert into Hoito (Sairaudet, Lääkkeet)Values('" + gunaSairaudet.Text + "','" + gunaLääkitys.Text + ")", con);
+            //cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Tallennettu...");
+
+            fillgrid();
+        }
+
+        void fillgrid()
+        {
+            con.Open();
+            OleDbDataAdapter da = new OleDbDataAdapter("Select Eläimen_nimi, Omistajan_nimi, Syntymäpäivä, Laji, Tila from Eläin order by Eläimen_nimi", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Eläinklinikka
+﻿using System;
+
+namespace Eläinklinikka
 {
     partial class Lääkärit
     {
@@ -45,10 +47,10 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaAmmatti = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaNimi = new Guna.UI.WinForms.GunaTextBox();
             this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -102,6 +104,7 @@
             this.gunaAdvenceButton5.TabIndex = 22;
             this.gunaAdvenceButton5.Text = "Tallenna";
             this.gunaAdvenceButton5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaAdvenceButton5.Click += new System.EventHandler(this.gunaTallenna_Click);
             // 
             // gunaAdvenceButton4
             // 
@@ -135,6 +138,7 @@
             this.gunaAdvenceButton4.TabIndex = 21;
             this.gunaAdvenceButton4.Text = "Poista";
             this.gunaAdvenceButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaAdvenceButton4.Click += new System.EventHandler(this.gunaPoista_Click);
             // 
             // gunaAdvenceButton1
             // 
@@ -168,7 +172,6 @@
             this.gunaAdvenceButton1.TabIndex = 19;
             this.gunaAdvenceButton1.Text = "Lisää";
             this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
             // 
             // pictureBox2
             // 
@@ -216,10 +219,10 @@
             this.panel2.Controls.Add(this.gunaLabel1);
             this.panel2.Controls.Add(this.gunaTextBox2);
             this.panel2.Controls.Add(this.gunaLabel4);
-            this.panel2.Controls.Add(this.gunaComboBox1);
+            this.panel2.Controls.Add(this.gunaAmmatti);
             this.panel2.Controls.Add(this.gunaLabel3);
             this.panel2.Controls.Add(this.gunaLabel2);
-            this.panel2.Controls.Add(this.gunaTextBox1);
+            this.panel2.Controls.Add(this.gunaNimi);
             this.panel2.Controls.Add(this.gunaDateTimePicker1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -332,27 +335,27 @@
             this.gunaLabel4.TabIndex = 8;
             this.gunaLabel4.Text = "Syntymäaika";
             // 
-            // gunaComboBox1
+            // gunaAmmatti
             // 
-            this.gunaComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox1.FormattingEnabled = true;
-            this.gunaComboBox1.Items.AddRange(new object[] {
+            this.gunaAmmatti.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAmmatti.BaseColor = System.Drawing.Color.White;
+            this.gunaAmmatti.BorderColor = System.Drawing.Color.Silver;
+            this.gunaAmmatti.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.gunaAmmatti.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.gunaAmmatti.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAmmatti.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gunaAmmatti.ForeColor = System.Drawing.Color.Black;
+            this.gunaAmmatti.FormattingEnabled = true;
+            this.gunaAmmatti.Items.AddRange(new object[] {
             "Lääkäri",
             "Virkailija",
             "Toimisto"});
-            this.gunaComboBox1.Location = new System.Drawing.Point(43, 156);
-            this.gunaComboBox1.Name = "gunaComboBox1";
-            this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox1.Size = new System.Drawing.Size(253, 26);
-            this.gunaComboBox1.TabIndex = 7;
+            this.gunaAmmatti.Location = new System.Drawing.Point(43, 156);
+            this.gunaAmmatti.Name = "gunaAmmatti";
+            this.gunaAmmatti.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaAmmatti.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.gunaAmmatti.Size = new System.Drawing.Size(253, 26);
+            this.gunaAmmatti.TabIndex = 7;
             // 
             // gunaLabel3
             // 
@@ -374,21 +377,21 @@
             this.gunaLabel2.TabIndex = 3;
             this.gunaLabel2.Text = "Nimi";
             // 
-            // gunaTextBox1
+            // gunaNimi
             // 
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox1.Location = new System.Drawing.Point(43, 51);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(253, 30);
-            this.gunaTextBox1.TabIndex = 2;
+            this.gunaNimi.BaseColor = System.Drawing.Color.White;
+            this.gunaNimi.BorderColor = System.Drawing.Color.Silver;
+            this.gunaNimi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gunaNimi.FocusedBaseColor = System.Drawing.Color.White;
+            this.gunaNimi.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaNimi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.gunaNimi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaNimi.Location = new System.Drawing.Point(43, 51);
+            this.gunaNimi.Name = "gunaNimi";
+            this.gunaNimi.PasswordChar = '\0';
+            this.gunaNimi.SelectedText = "";
+            this.gunaNimi.Size = new System.Drawing.Size(253, 30);
+            this.gunaNimi.TabIndex = 2;
             // 
             // gunaDateTimePicker1
             // 
@@ -560,10 +563,10 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
+        private Guna.UI.WinForms.GunaComboBox gunaAmmatti;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private Guna.UI.WinForms.GunaTextBox gunaNimi;
         private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
