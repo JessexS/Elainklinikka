@@ -7,6 +7,7 @@ namespace Eläinklinikka
 {
     public partial class Omistajat : Form
     {
+        private const string V = ",";
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + Application.StartupPath + "/Eläinklinikka.mdb");
         public Omistajat()
         {
@@ -61,7 +62,7 @@ namespace Eläinklinikka
         private void gunaTallenna_Click(object sender, EventArgs e)
         {
             con.Open();
-            OleDbCommand cmd = new OleDbCommand("Insert into Omistaja (Omistajan_nimi, Sähköposti, Eläimen_nimi, Osoite, Puhelin)values('" + gunaOnimi.Text + "','" + gunaSposti.Text + "','" + gunaOeläin.Text + "','" + gunaOsoite.Text + "','" + gunaPnume.Text + ")", con);
+            OleDbCommand cmd = new OleDbCommand("Insert into Omistaja (Omistajan_nimi, Sähköposti, Eläimen_nimi, Osoite, Puhelin)values(" + gunaOnimi.Text + "," + gunaSposti.Text + "," + gunaOeläin.Text + "," + gunaOsoite.Text + V + gunaPnume.Text + ")", con);
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Tallennettu...");

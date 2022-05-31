@@ -78,7 +78,7 @@ namespace Eläinklinikka
         private void gunaTallenna_Click(object sender, EventArgs e)
         {
             con.Open();
-            OleDbCommand cmd = new OleDbCommand("INSERT INTO Eläin ( Eläimen_nimi, Omistajan_nimi, Syntymäpäivä, Laji, Tila, Sairaudet, Lääkkeet ) Values('" + gunaNimi.Text + "','" + gunaOnimi.Text + "','" + gunaAika.Text + "','" + gunaLaji.Text + "','" + gunaTila.Text + ")", con);
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO Eläin ( Eläimen_nimi, Omistajan_nimi, Syntymäpäivä, Laji, Tila, Sairaudet, Lääkkeet ) Values(" + gunaNimi.Text + "," + gunaOnimi.Text + ",'" + gunaAika.Text + "," + gunaLaji.Text + "," + gunaTila.Text + ")", con);
             cmd.ExecuteNonQuery();
             //cmd = new OleDbCommand("Insert into Hoito (Sairaudet, Lääkkeet)Values('" + gunaSairaudet.Text + "','" + gunaLääkitys.Text + ")", con);
             //cmd.ExecuteNonQuery();
