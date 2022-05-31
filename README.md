@@ -1,3 +1,2 @@
-# Valmis ja viimeinen versio on Kopio polussa
-# https://github.com/JessexS/Elainklinikka/tree/Kopio
-
+# Valmis ja viimeinen versio on FINAL polussa
+# https://github.com/JessexS/Elainklinikka/tree/FINAL
