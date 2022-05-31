@@ -5,7 +5,7 @@ using System.Data;
 using System.IO;
 using Excel;
 using System.Linq;
-
+using IronXL;
 
 namespace Eläinklinikka
 {
@@ -153,6 +153,15 @@ namespace Eläinklinikka
             }
         }
 
+        private void gunaAdvenceButton2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaAdvenceButton2_Click_2(object sender, EventArgs e)
+        {
+            
+        }
     }
     }
     

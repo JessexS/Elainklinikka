@@ -212,6 +212,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="EläinklinikkaData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\Guna UI Activation.vbproj" />
     <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\My Project\Settings.settings" />
     <None Include="Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\obj\Debug\DesignTimeResolveAssemblyReferences.cache">
